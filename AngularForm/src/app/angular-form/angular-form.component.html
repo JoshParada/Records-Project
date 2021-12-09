@@ -1,0 +1,43 @@
+<div class="body">
+    <div class="container">
+        <h1>Tune Squad</h1>
+        <form class="createteamform" #createteamform="ngForm" (ngSubmit)="submitPlayer(createteamform.valid)">
+            <div class="selectplayer">
+                <h2>Create your team: (Enter 5 players)</h2>
+                <span class="input-group-text" id="inputGroup-sizing-default">Position</span>
+                <select name="position" placeholder="Select a position" required class="form-select"
+                    aria-label="Default select example" [(ngModel)]="player1.position">
+                    <option *ngFor="let position of positions">{{position}}</option>
+                </select>
+
+                <span class="input-group-text" id="inputGroup-sizing-default">Player First Name:</span>
+                <input name="playerfname" type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" [(ngModel)]="player1.fname" required>
+
+                <span class="input-group-text" id="inputGroup-sizing-default">Player Last Name:</span>
+                <input name="playerlname" type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" [(ngModel)]="player1.lname" required>
+
+                <span class="input-group-text" id="inputGroup-sizing-default">Player Skill:</span>
+                <input name="playerlskill" type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" [(ngModel)]="player1.skill" required>
+
+                <span class="input-group-text" id="inputGroup-sizing-default">Player Number:</span>
+                <input name="playernumber" type="number" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" [(ngModel)]="player1.number" required>
+
+            </div>
+
+
+            <button type="submit" [disabled]="createteamform.invalid">Add to team!</button>
+        </form>
+        <div class="output">
+            <p>{{output}}</p>
+            <p>{{p1}}</p>
+            <p>{{p2}}</p>
+            <p>{{p3}}</p>
+            <p>{{p4}}</p>
+            <p>{{p5}}</p>
+        </div>
+    </div>
+</div>
